@@ -34,12 +34,13 @@ const SearchGrid = () => {
       </div>
     )
   }
+  console.log(cards)
   return (
     <div className="flex items-center p-4 flex-col h-full gap-4 ">
       <h1 className="px-3 font-bold text-2xl ">Result of : {str}</h1>
       <div className="grid grid-cols-1  grid-flow-row-dense md:grid-cols-4 text-center">
         {cards.length > 0 ? cards.map((card) => {
-          return <CardComponent src={card?.urls.regular} key={card?.id} />
+          return <CardComponent src={card?.urls.regular} username={card?.user?.username} desc={card?.description} link={card?.links?.html} key={card?.id} />
         }) : <h1>No Images Found 🥲</h1>}
       </div>
       <div className="p-3 flex items-center gap-5">
